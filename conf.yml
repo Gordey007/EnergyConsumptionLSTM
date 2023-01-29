@@ -1,4 +1,20 @@
-train_test_split: 0.10
-lag: 24
-LSTM_layer_depth: 64
-epochs: 10
+# AEP_hourly, COMED_hourly, DAYTON_hourly, DEOK_hourly, DOM_hourly, DUQ_hourly,
+# EKPC_hourly, FE_hourly, NI_hourly, PJME_hourly, PJMW_hourly
+
+# openweathermap_komsomolsk_on_amur_2001_2022
+file: 'input/openweathermap_komsomolsk_on_amur_2001_2022.csv'
+
+# value
+
+# dew_point_kelvins, dew_point_degrees, feels_like_kelvins, feels_like_degrees, temp_min_kelvins, temp_min_degrees,
+# temp_max_kelvins, temp_max_degrees, pressure, humidity, wind_speed, wind_deg, rain_1h,snow_1h, leftovers, clouds_all,
+# weather_id, weather_description
+Y_var: 'dew_point_degrees'
+X_var: 'datetime'
+
+train_test_split: 0.20
+lag: 72
+#lag: 72
+LSTM_layer_depth: 20
+batch_size: 64
+epochs: 2
